@@ -1,7 +1,7 @@
 # Back-end source code in https://github.com/cardozoarthur/2b8-back_python
 ## test app in https://b8covidfront.herokuapp.com/signup
 
-use doc 126.681.170-11 to login
+use doc 026.681.170-11 to login
 password: admin123
 
 # Getting Started with Create React App
