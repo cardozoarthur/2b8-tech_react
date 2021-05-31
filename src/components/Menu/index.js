@@ -40,7 +40,7 @@ export default function Menu({children}) {
                     (
                     <>
                         <div className="MenuItemGroup">
-                            <MenuItem iconUri={stethoscope} text="Pré Diagnóstico" />
+                            <MenuItem to="/form" iconUri={stethoscope} text="Pré Diagnóstico" />
                             <MenuItem to="/" iconUri={computer} text="Guia Rápido - Informações" />
                         </div>
                         <div className="MenuItemGroup">

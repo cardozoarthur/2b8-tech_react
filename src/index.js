@@ -8,6 +8,7 @@ import Signin from './pages/Signin';
 import Signup from './pages/Signup';
 import Private from './components/Private';
 import Map from './pages/Map';
+import Form from './pages/Form';
 
 
 ReactDOM.render(
@@ -27,6 +28,13 @@ ReactDOM.render(
         <Container>
           <Private>
             <Map />
+          </Private>
+        </Container>
+      </Route>
+      <Route path="/form">
+        <Container>
+          <Private>
+            <Form />
           </Private>
         </Container>
       </Route>

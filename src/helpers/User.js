@@ -5,7 +5,7 @@ export default class User {
     static userSet = false;
 
     static app = axios.create({
-        baseURL: 'http://localhost:4000'
+        baseURL: ' http://renatonlm.pythonanywhere.com/'
     });
 
     static async signup({ doc, age, cep, city, district, pass }, cb=(data)=>{}) {
@@ -18,7 +18,8 @@ export default class User {
                     name: 'Admin'
                 });
             }
-            let {data} = await this.app.post('/signup', { doc, age, cep, city, district, pass });
+            const numbers = /[^\d]/g
+            let {data} = await this.app.post('/cadastro', { cpf: doc.split(numbers).join(''), idade: age.split(numbers).join(''), cep, cidade: city, bairro: district, senha: pass });
             cb(data);
         } catch (e) {
             console.log(e);
@@ -35,7 +36,9 @@ export default class User {
                     name: 'Admin'
                 });
             }
-            let {data: user} = await this.app.post('/signin', { doc, pass });
+            const numbers = /[^\d]/g
+            console.log({ cpf: doc.split(numbers).join(''), senha: pass });
+            let {data: user} = await this.app.post('/login', { cpf: doc.split(numbers).join(''), senha: pass });
             localStorage.setItem('2b8-user', JSON.stringify(user));
             this.userSet = true;
             cb(user);
